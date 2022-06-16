@@ -8,11 +8,6 @@ import { ApiBody, ApiOperation } from '@nestjs/swagger';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
   @Post()
   @ApiOperation({ description: 'Some api operation to post hello' })
   async postHello(@Body() input: HelloDto): Promise<string> {
